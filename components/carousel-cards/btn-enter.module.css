@@ -1,0 +1,14 @@
+.btnEnter{
+  display: inline-block;
+  color: var(--gray-color);
+  margin: 1.5rem 0;
+  padding: .5rem 1rem;
+  border-radius: .175rem;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+.last{
+  font-weight: bold;
+  border: solid thin green;
+}

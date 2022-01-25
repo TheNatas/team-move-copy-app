@@ -1,16 +1,20 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root{
+  --dark-blue-color: #2b2839;
+  --gray-color: #8c8c8c;
+  --orange-color: #dd4d0a;
+  --light-orange-color: #d19d0b;
+  --dark-orange-color: #ae4e00;
+  --yellow-color: #d8cc1e;
+  --brown-color: #765017;
+  --light-green-color: #89d35f;
+  --green-color: #2f6c0b;
+  --card-header-font-size: 1.225rem;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+*{
+  text-align: center;
 }
 
-* {
-  box-sizing: border-box;
+body{
+  background-color: var(--dark-blue-color);
 }

@@ -1,0 +1,39 @@
+.txtColorOrange{
+  color: var(--orange-color);
+}
+
+.txtColorGray{
+  color: var(--gray-color);
+}
+
+.txtColorLightOrange{
+  color: var(--light-orange-color);
+}
+
+.txtColorYellow{
+  color: var(--yellow-color);
+}
+
+.txtColorLightGreen{
+  color: var(--light-green-color);
+}
+
+.bgColorOrange{
+  background-color: var(--orange-color);
+}
+
+.bgColorDarkOrange{
+  background-color: var(--dark-orange-color);
+}
+
+.bgColorBrown{
+  background-color: var(--brown-color);
+}
+
+.bgColorGray{
+  background-color: var(--gray-color);
+}
+
+.bgColorGreen{
+  background-color: var(--green-color);
+}
