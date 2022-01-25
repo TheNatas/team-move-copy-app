@@ -1,6 +1,8 @@
 :root{
   --dark-blue-color: #2b2839;
+  --white-color: #FFFFFF;
   --gray-color: #8c8c8c;
+  --dark-gray-color: #585858;
   --orange-color: #dd4d0a;
   --light-orange-color: #d19d0b;
   --dark-orange-color: #ae4e00;
@@ -8,6 +10,7 @@
   --brown-color: #765017;
   --light-green-color: #89d35f;
   --green-color: #2f6c0b;
+  --light-red-color: #da6c6c;
   --card-header-font-size: 1.225rem;
 }
 

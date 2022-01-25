@@ -2,6 +2,10 @@
   color: var(--orange-color);
 }
 
+.txtColorWhite{
+  color: var(--white-color);
+}
+
 .txtColorGray{
   color: var(--gray-color);
 }
@@ -28,6 +32,10 @@
 
 .bgColorBrown{
   background-color: var(--brown-color);
+}
+
+.bgColorDarkGray{
+  background-color: var(--dark-gray-color);
 }
 
 .bgColorGray{

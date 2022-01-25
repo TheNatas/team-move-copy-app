@@ -9,7 +9,7 @@ const WelcomeCard : NextPage = () => {
   return(
     <Layout>
       <WelcomeCardHeader/>
-      <div className={cardStyles.cardImgPlaceholder + ' ' + styles.bgColorGray}></div>
+      <div className={cardStyles.cardImgPlaceholder + ' ' + styles.bgColorDarkGray}></div>
       <BtnEnter/>
     </Layout>
   )

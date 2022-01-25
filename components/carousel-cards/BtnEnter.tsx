@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Link from "next/link";
 import styles from "./btn-enter.module.css";
 
 interface BtnEnterProps{
@@ -8,7 +9,9 @@ interface BtnEnterProps{
 const BtnEnter : NextPage<BtnEnterProps> = ({last} : BtnEnterProps) => {
   return(
     <div className={`${styles.btnEnter} ${last ? styles.last : ''}`}>
-      <span>Entrar agora</span>
+      <Link href="/login">
+        <span>Entrar agora</span>
+      </Link>
     </div>
   )
 }

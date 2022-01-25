@@ -6,15 +6,16 @@ import ResultsCard from '../components/carousel-cards/results/ResultsCard';
 import StartNowCard from '../components/carousel-cards/start-now/StartNowCard';
 import TeamCard from '../components/carousel-cards/team/TeamCard';
 import WelcomeCard from '../components/carousel-cards/welcome/WelcomeCard';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   const [index, setIndex] = useState(0);
 
+  const { width } = useWindowDimensions();
+  
   const handleSelect = (selectedIndex: number, e: any) => {
     setIndex(selectedIndex);
-    console.log(e);
-    // TODO: limit the carousel when on the first or last item
   }
 
   return (
@@ -22,6 +23,8 @@ const Home: NextPage = () => {
       activeIndex={index}
       onSelect={handleSelect}
       interval={null} 
+      wrap={false}
+      controls={width === undefined || width > 800}
       className={styles.container}
     >
       <Carousel.Item>
