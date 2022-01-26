@@ -5,6 +5,7 @@ import logo from "../public/logo.png";
 import { Button, Form } from "react-bootstrap";
 import LoginInfoMissing from "../components/LoginInfoMissing";
 import React, { useState } from "react";
+import Link from "next/link";
 
 type loginInfo = {
   username: string,
@@ -72,7 +73,7 @@ const Login : NextPage = () => {
               onChange={handleChange}/>
             <Form.Label className={styles.label}>Usuário</Form.Label>
           </Form.Group>
-
+          {/* TODO: refactor these form groups into separate components taking all the necessary props */}
           <Form.Group className="text-start" controlId="formBasicPassword">
             <Form.Control type="password" className={styles.input} name="password" required 
               value={loginInfo.password} 
@@ -84,9 +85,11 @@ const Login : NextPage = () => {
             <Button onClick={handleSubmit} variant="primary" className={`${styles.btn} ${styles.btnLogin}`}>
               Entrar
             </Button>
-            <span className={styles.btn}>
-              Esqueceu sua senha?
-            </span>
+            <Link href="/forgotten-password">
+              <span className={styles.btn}>
+                Esqueceu sua senha?
+              </span>
+            </Link>
           </div>
         </Form>
       </div>

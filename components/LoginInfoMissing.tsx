@@ -14,7 +14,7 @@ const LoginInfoMissing : NextPage<LoginInfoMissingProps> = ({missingInfo, handle
       <div style={{margin: '1rem', width: errorImg.width, height: errorImg.height, display: 'inline-block'}}>
         <Image src={errorImg}/>
       </div>
-      <span style={{position: 'absolute', top: '50%', left: '30%', transform: 'translate(-50%, -50%)', color: 'white'}}>{`Informe ${missingInfo}`}</span>
+      <span className={styles.span}>{`Informe ${missingInfo}`}</span>
     </div>
   )
 }
