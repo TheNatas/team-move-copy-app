@@ -1,19 +1,21 @@
 import { NextPage } from "next";
+import styles from "./login-info-missing.module.css";
 import Image from "next/image";
 import errorImg from "../public/error.png";
 
 type LoginInfoMissingProps = {
-  missingInfo: string
+  missingInfo: string,
+  handleAnimationEnd: VoidFunction
 }
 
-const LoginInfoMissing : NextPage<LoginInfoMissingProps> = ({missingInfo}) => {
+const LoginInfoMissing : NextPage<LoginInfoMissingProps> = ({missingInfo, handleAnimationEnd}) => {
   return(
-    <div style={{position: 'absolute', top: 0, backgroundColor: 'var(--light-red-color)', width: '100%', textAlign: 'start'}}>
-      <div style={{margin: '1rem', width: 'fit-content'}}>
+    <div className={styles.container} onAnimationEnd={handleAnimationEnd}>
+      <div style={{margin: '1rem', width: errorImg.width, height: errorImg.height, display: 'inline-block'}}>
         <Image src={errorImg}/>
       </div>
-      <span style={{position: 'absolute', top: '50%', left: '37.5%', transform: 'translate(-50%, -50%)'}}>{`Informe ${missingInfo}`}</span>
-    </div> // TODO: make it visible just temporarily after error and decide over its size
+      <span style={{position: 'absolute', top: '50%', left: '30%', transform: 'translate(-50%, -50%)', color: 'white'}}>{`Informe ${missingInfo}`}</span>
+    </div>
   )
 }
 

@@ -47,7 +47,24 @@
   font-weight: bold;
   color: var(--white-color);
   padding: .375rem .75rem;
-  border: 1px solid transparent;
+  border: none;
+}
+
+.btnLogin{
+  background-color: var(--orange-color); 
+  border-color: var(--orange-color);
+}
+
+.btnLogin:focus, 
+.btnLogin:focus-within,
+.btnLogin:focus-visible, 
+.btnLogin:hover{
+  background-color: var(--orange-color);
+  box-shadow: none !important;
+  border: none;
+}
+.btnLogin:active{
+  background-color: var(--light-orange-color);
 }
 
 .version{
