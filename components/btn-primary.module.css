@@ -1,0 +1,21 @@
+.btn{
+  width: 100%;
+  font-weight: bold;
+  color: var(--white-color);
+  padding: .375rem .75rem;
+  border: none;
+  background-color: var(--orange-color); 
+  border-color: var(--orange-color);
+}
+
+.btn:focus, 
+.btn:focus-within,
+.btn:focus-visible, 
+.btn:hover{
+  background-color: var(--orange-color);
+  box-shadow: none !important;
+  border: none;
+}
+.btn:active{
+  background-color: var(--light-orange-color);
+}

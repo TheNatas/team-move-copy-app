@@ -8,63 +8,11 @@
   margin: auto;
 }
 
-.logo{
-  position: relative;
-  bottom: .5rem;
-}
-
-.label{
-  color: var(--white-color);
-  transition: all 0.2s;
-  position: relative;
-  bottom: 1.875rem;
-  font-size: 1.125rem;
-}
-
-.input{
-  background-color: transparent;
-  color: var(--white-color);
-  border: none;
-  border-bottom: solid thin #212529;
-  text-align: start;
-}
-
-.input:focus{
-  background-color: transparent;
-  color: var(--white-color);
-  box-shadow: none;
-  border-color: black;
-}
-
-.input:focus ~ .label,
-.input:not(:focus):valid ~ .label{
-  bottom: 3.5rem;
-  font-size: 1rem;
-  color: var(--gray-color);
-}
-
 .btn{
   font-weight: bold;
   color: var(--white-color);
   padding: .375rem .75rem;
   border: none;
-}
-
-.btnLogin{
-  background-color: var(--orange-color); 
-  border-color: var(--orange-color);
-}
-
-.btnLogin:focus, 
-.btnLogin:focus-within,
-.btnLogin:focus-visible, 
-.btnLogin:hover{
-  background-color: var(--orange-color);
-  box-shadow: none !important;
-  border: none;
-}
-.btnLogin:active{
-  background-color: var(--light-orange-color);
 }
 
 .version{

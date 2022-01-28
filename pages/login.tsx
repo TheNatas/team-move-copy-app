@@ -1,11 +1,14 @@
 import { NextPage } from "next";
-import Image from "next/image";
 import styles from "../styles/Login.module.css";
-import logo from "../public/logo.png";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import LoginInfoMissing from "../components/LoginInfoMissing";
 import React, { useState } from "react";
 import Link from "next/link";
+import Logo from "../components/Logo";
+import InputGroup from "../components/InputGroup";
+import AppHead from "../components/AppHead";
+import BtnPrimary from "../components/BtnPrimary";
+import FormLayout from "../components/FormLayout";
 
 type loginInfo = {
   username: string,
@@ -27,10 +30,12 @@ const Login : NextPage = () => {
     password: ''
   });
 
-  const handleChange = (e: any) => setLoginInfo({
-    ...loginInfo,
-    [e.target.name]: e.target.value
-  });
+  const handleChange = (e: any) => {
+    setLoginInfo({
+      ...loginInfo,
+      [e.target.name]: e.target.value
+    })
+  };
 
   const handleSubmit = () => {
     if (!loginInfo.username){
@@ -55,6 +60,7 @@ const Login : NextPage = () => {
 
   return(
     <>
+      <AppHead/>
       {errorDisplay.displaying && 
         <LoginInfoMissing missingInfo={errorDisplay.missing} 
           handleAnimationEnd={() => setErrorDisplay({
@@ -62,37 +68,22 @@ const Login : NextPage = () => {
             missing: ''
           })}/>
       }
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <Image src={logo}/>
-        </div>
+      <FormLayout>
+        <Logo/>
         <Form>
-          <Form.Group className="text-start" controlId="formBasicUsername">
-            <Form.Control type="text" className={styles.input} name="username" required 
-              value={loginInfo.username} 
-              onChange={handleChange}/>
-            <Form.Label className={styles.label}>Usuário</Form.Label>
-          </Form.Group>
-          {/* TODO: refactor these form groups into separate components taking all the necessary props */}
-          <Form.Group className="text-start" controlId="formBasicPassword">
-            <Form.Control type="password" className={styles.input} name="password" required 
-              value={loginInfo.password} 
-              onChange={handleChange}/>
-            <Form.Label className={styles.label}>Senha</Form.Label>
-          </Form.Group>
+          <InputGroup type="text" name="username" displayName="Usuário" value={loginInfo.username} handleChange={handleChange}/>
+          <InputGroup type="password" name="password" displayName="Senha" value={loginInfo.password} handleChange={handleChange}/>
 
           <div className="d-grid gap-2">
-            <Button onClick={handleSubmit} variant="primary" className={`${styles.btn} ${styles.btnLogin}`}>
-              Entrar
-            </Button>
-            <Link href="/forgotten-password">
+            <BtnPrimary handleSubmit={handleSubmit} innerText="Entrar"/>
+            <Link href={`/esqueci-minha-senha/login?username=${loginInfo.username}`}>
               <span className={styles.btn}>
                 Esqueceu sua senha?
               </span>
             </Link>
           </div>
         </Form>
-      </div>
+      </FormLayout>
       <span className={styles.version}>v0</span>
     </>
   )
