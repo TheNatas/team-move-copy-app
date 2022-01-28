@@ -20,7 +20,7 @@ const ForgottenPassword : NextPage = () => {
   return(
     <>
       <Link href='/login'>
-        <div style={{position: 'absolute', top: 0, left: 0, margin: '1rem'}}>
+        <div style={{position: 'absolute', top: 0, left: 0, margin: '1rem', cursor: 'pointer'}}>
           <Image src={backImg} alt="Voltar ao login"/>
         </div>
       </Link>
