@@ -18,7 +18,7 @@ const CardHeader : NextPage<CardHeaderProps> = ({ cardTitle, cardTitleColor, has
     <div className={cardStyles.cardHeader}>
       <h4 className={`${cardStyles.cardHeaderTitle} ${cardTitleColor}`}>{cardTitle}</h4>
       {hasLogo ? 
-      <Image src={logo}/> : 
+      <Image src={logo} alt="Team Move logo"/> : 
       <p className={styles.txtColorGray}>{paragraph}</p>}
     </div>
   )

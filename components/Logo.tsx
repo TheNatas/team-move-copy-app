@@ -5,7 +5,7 @@ import Image from "next/image";
 const Logo : NextPage = () => {
   return(
     <div style={{position: 'relative', bottom: '2rem'}}>
-      <Image src={logo}/>
+      <Image src={logo} alt="Team Move logo"/>
     </div>
   )
 }

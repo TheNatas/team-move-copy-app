@@ -21,7 +21,7 @@ const ForgottenPassword : NextPage = () => {
     <>
       <Link href='/login'>
         <div style={{position: 'absolute', top: 0, left: 0, margin: '1rem'}}>
-          <Image src={backImg}/>
+          <Image src={backImg} alt="Voltar ao login"/>
         </div>
       </Link>
       <FormLayout>
