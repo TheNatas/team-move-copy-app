@@ -1,21 +1,18 @@
 import type { NextPage } from 'next'
-import { ReactNode, SyntheticEvent, useState } from 'react';
+import { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import AppHead from '../components/AppHead';
-import MobilityCard from '../components/carousel-cards/mobility/MobilityCard';
-import ResultsCard from '../components/carousel-cards/results/ResultsCard';
-import StartNowCard from '../components/carousel-cards/start-now/StartNowCard';
-import TeamCard from '../components/carousel-cards/team/TeamCard';
-import WelcomeCard from '../components/carousel-cards/welcome/WelcomeCard';
+import Card from '../components/Card';
 import useWindowDimensions from '../hooks/useWindowDimensions';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import utilStyles from '../styles/utils.module.css';
 
 const Home: NextPage = () => {
   const [index, setIndex] = useState(0);
 
   const { width } = useWindowDimensions();
   
-  const handleSelect = (selectedIndex: number, e: any) => {
+  const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
   }
 
@@ -31,19 +28,19 @@ const Home: NextPage = () => {
         className={styles.container}
       >
         <Carousel.Item>
-          <WelcomeCard/>
+          <Card cardTitle='Bem-vindo(a) à' cardTitleColor={utilStyles.txtColorGray} imgPlaceholderColor={utilStyles.bgColorDarkGray} hasLogo={true}/>
         </Carousel.Item>
         <Carousel.Item>
-          <TeamCard/>
+          <Card cardTitle='Equipe' cardTitleColor={utilStyles.txtColorOrange} imgPlaceholderColor={utilStyles.bgColorOrange} paragraph='Acompanhe sua equipe administrando suas atividades e melhore seus resultados'/>
         </Carousel.Item>
         <Carousel.Item>
-          <ResultsCard/>
+          <Card cardTitle='Resultados' cardTitleColor={utilStyles.txtColorLightOrange} imgPlaceholderColor={utilStyles.bgColorDarkOrange} paragraph='Seus resultados a qualquer momento e em qualquer lugar'/>
         </Carousel.Item>
         <Carousel.Item>
-          <MobilityCard/>
+          <Card cardTitle='Mobilidade' cardTitleColor={utilStyles.txtColorYellow} imgPlaceholderColor={utilStyles.bgColorBrown} paragraph='Sua empresa no alcance de um toque'/>
         </Carousel.Item>
         <Carousel.Item>
-          <StartNowCard/>
+          <Card cardTitle='Comece a usar agora' cardTitleColor={utilStyles.txtColorLightGreen} imgPlaceholderColor={utilStyles.bgColorGreen} paragraph='Desfrute de todas as vantagens do TeamMove' last={true}/>
         </Carousel.Item>
       </Carousel>
     </>
